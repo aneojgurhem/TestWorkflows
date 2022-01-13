@@ -42,5 +42,11 @@ jobs:
       - name: Logging githug.event
         run: echo "${{toJSON(github.event)}}"
 
+      - name: Logging githug.event.head_commit
+        run: echo "${{toJSON(github.event.head_commit)}}"
+
+      - name: Logging githug.event.pusher
+        run: echo "${{toJSON(github.event.pusher)}}"
+
       - name: Echo commit message
         run: echo "${{ github.event.head_commit.message }}"
