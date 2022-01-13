@@ -48,5 +48,8 @@ jobs:
       - name: Logging githug.event.pusher
         run: echo "${{toJSON(github.event.pusher)}}"
 
+      - name: Echo pusher email
+        run: echo "${{ github.event.pusher.email }}"
+
       - name: Echo commit message
         run: echo "${{ github.event.head_commit.message }}"
