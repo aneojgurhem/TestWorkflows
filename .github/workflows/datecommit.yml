@@ -19,6 +19,9 @@ jobs:
     - name: checkout
       uses: actions/checkout@v2
 
+    - name: Logging githug.event
+      run: echo "${{toJSON(github.event)}}"
+
     - name: save current date
       run: date >> time.txt
 
