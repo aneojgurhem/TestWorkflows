@@ -59,6 +59,7 @@ jobs:
     name: A job to test local action
     steps:
       - uses: actions/checkout@v2
+      - run: find .
       - uses: .github/actions/my-action.yml@main
         id: foo
         with:
