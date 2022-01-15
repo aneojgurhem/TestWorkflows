@@ -60,7 +60,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: find .
-      - uses: aneojgurhem/TestWorkflows/.github/actions@main
+      - uses: aneojgurhem/TestWorkflows/.github/actions/goodbye@main
         id: foo
         with:
           who-to-greet: 'Mona the Octocat'
