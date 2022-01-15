@@ -54,9 +54,28 @@ jobs:
       - name: Echo commit message
         run: echo "${{ github.event.head_commit.message }}"
 
+  versionning:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.genver.outputs.version }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
+        fetch-depth: 0
+    - name: Generate Version
+      id: genver
+      run: |
+        VERSION=$(docker run --rm -v $(pwd):/repo codacy/git-version /bin/git-version --folder=/repo --release-branch=release --dev-branch=dev) 
+        echo "::set-output name=version::$VERSION"
+        echo $VERSION
+
   testAction:
     runs-on: ubuntu-latest
-    name: A job to test local action
+    name: A job to test local action - v${{ needs.versionning.outputs.version }}
+    needs:
+      - versionning
     steps:
       - uses: actions/checkout@v2
       - run: find .
