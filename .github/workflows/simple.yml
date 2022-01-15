@@ -86,3 +86,15 @@ jobs:
       - name: number - ${{ steps.foo.outputs.random-number }}
         run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
+
+  pushArtifact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - run: echo hello > world.txt
+      
+      - uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: world.txt
