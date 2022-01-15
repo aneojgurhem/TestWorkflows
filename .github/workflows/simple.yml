@@ -59,7 +59,7 @@ jobs:
     name: A job to test local action
     steps:
       - uses: actions/checkout@v2
-      - uses: aneojgurhem/TestWorkflows/.github/actions/my-action.yml@main
+      - uses: .github/actions/my-action.yml@main
         id: foo
         with:
           who-to-greet: 'Mona the Octocat'
