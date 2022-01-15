@@ -19,11 +19,11 @@ runs:
       shell: bash
     - run: ${{ github.action_path }}/goodbye.sh
       shell: bash
-    - uses: actions/checkout@v2
     - run: pwd
-      shell: bash
-    - run: echo ${{ github.action_path }}
       shell: bash
     - run: find .
       shell: bash
-
+    - run: echo ${{ github.action_path }}
+      shell: bash
+    - run: find ${{ github.action_path }}
+      shell: bash
