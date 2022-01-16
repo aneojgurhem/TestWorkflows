@@ -103,3 +103,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: aneoconsulting/ArmoniK/.github/actions/test-mock@JG/workflows
+        with:
+          version: JG/workflows
