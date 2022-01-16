@@ -100,4 +100,6 @@ jobs:
           path: world.txt
 
   htcMock:
-    uses: aneoconsulting/ArmoniK/.github/workflows/test-mock.yml@JG/workflows
+    runs-on: ubuntu-latest
+    steps:
+      - uses: aneoconsulting/ArmoniK/.github/actions/test-mock@JG/workflows
