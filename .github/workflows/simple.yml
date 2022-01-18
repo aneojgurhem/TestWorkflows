@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
 # Controls when the workflow will run
@@ -99,9 +97,9 @@ jobs:
           name: my-artifact
           path: world.txt
 
-  htcMock:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: aneoconsulting/ArmoniK/.github/actions/test-mock@JG/workflows
-        with:
-          version: JG/workflows
+#  htcMock:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: aneoconsulting/ArmoniK/.github/actions/test-mock@main
+#        with:
+#          version: main
