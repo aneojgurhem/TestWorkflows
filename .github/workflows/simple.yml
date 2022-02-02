@@ -38,6 +38,9 @@ jobs:
       - name: Run ls
         run: ls -laGhF
 
+      - name: Logging githug
+        run: echo "${{toJSON(github)}}"
+
       - name: Logging githug.event
         run: echo "${{toJSON(github.event)}}"
 
