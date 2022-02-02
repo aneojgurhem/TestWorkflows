@@ -44,6 +44,9 @@ jobs:
       - name: Logging githug.event
         run: echo "${{toJSON(github.event)}}"
 
+      - name: Logging githug.ref_name
+        run: echo "${{toJSON(github.ref_name)}}"
+
       - name: Logging githug.event.head_commit
         run: echo "${{toJSON(github.event.head_commit)}}"
 
