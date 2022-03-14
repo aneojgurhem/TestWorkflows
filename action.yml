@@ -27,3 +27,6 @@ runs:
         echo ${{ github.action_path }}
         find ${{ github.action_path }}
       shell: bash
+    - name: Logging githug
+      shell: bash
+      run: echo "${{toJSON(github)}}"
