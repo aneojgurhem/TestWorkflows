@@ -104,6 +104,19 @@ jobs:
           name: my-artifact
           path: world.txt
 
+  testMatrix:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        p:
+          - val1
+          - val2
+    steps:
+      - name: Logging githug
+        run: echo "${{toJSON(github)}}"
+      - name: Logging matrix
+        run: echo "${{toJSON(matrix)}}"
+
 #  htcMock:
 #    runs-on: ubuntu-latest
 #    steps:
