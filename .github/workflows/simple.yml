@@ -129,7 +129,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: ${{ github.ref }}
-          submodules: true
+      - run: find .
       - uses: ./.github/workflows/call.yml
         with:
           username: ${{ matrix.p }}
