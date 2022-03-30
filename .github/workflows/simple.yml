@@ -125,6 +125,7 @@ jobs:
           - val1
           - val2
     steps:
+      - uses: actions/checkout@v2
       - uses: ./.github/workflows/call.yml
         with:
           username: ${{ matrix.p }}
