@@ -117,6 +117,18 @@ jobs:
       - name: Logging matrix
         run: echo "${{toJSON(matrix)}}"
 
+  testMatrixWorkflowCall:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        p:
+          - val1
+          - val2
+    steps:
+      - uses: ./.github/workflows/call
+        with:
+          username: ${{ matrix.p }}
+
 #  htcMock:
 #    runs-on: ubuntu-latest
 #    steps:
